@@ -1,28 +1,32 @@
 #include "list.h"
 
-size_t current_index = -1;
-size_t list_size = DEFAULT_MAX_LIST_SIZE;
-node_t *list[DEFAULT_MAX_LIST_SIZE] = {EMPTY};
 
-void extend_list()
+struct ListNode
 {
-        
-}
+    struct ListNode *top;
+    struct ListNode *left;
+    struct ListNode *right;
+    struct ListNode *bottom;
+    void *data;
+};
 
-
-size_t append(void* data)
+struct ListHead
 {
-    node_t *node = create_data_node(data);
-    list[++current_index] = node;
-}
+    size_t programCounter;
+    size_t stackPointer;
+    size_t size;
+    struct ListNode *front;
+    struct ListNode *rear;
+};
 
-
-size_t get_list_size()
+lhead_t* createList()
 {
-    return list_size;
-}
-
-void print(printer p)
-{
-    p(list);
+    lhead_t *list = (lhead_t*) malloc(sizeof(lhead_t));
+    assert(list != NULL);
+    list->front = NULL;
+    list->rear = NULL;
+    list->size = LIST_DEFAULT_SIZE;
+    list->programCounter = -1;
+    list -> stackPointer = -1;
+    return list;
 }

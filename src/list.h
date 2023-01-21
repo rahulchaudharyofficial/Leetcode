@@ -1,14 +1,15 @@
 
 #ifndef _LEETCODE_LIST_H_
 #define _LEETCODE_LIST_H_ 1
+
 #include "common.h"
+#include <inttypes.h>
 
-#define DEFAULT_MAX_LIST_SIZE 25
+#define LIST_DEFAULT_SIZE 25
+#define LIST_MAX_SIZE __LONG_MAX__ 
 
-typedef void (*printer)(void*);
+typedef struct ListHead lhead_t;
+typedef struct ListNode lnode_t;
 
-size_t append(void*);
-size_t get_list_size();
-void print(printer p);
-
+lhead_t* createList();
 #endif
