@@ -2,7 +2,14 @@
 
 char** tokenizer(char *text, char *delimeter)
 {
-    return NULL;
+    char **tokens = NULL;
+    char *token = NULL;
+    do
+    {
+        token = strtok(text, delimeter);
+    } while (token != NULL);
+    
+    return tokens;
 }
 
 bool isempty(char *str)
