@@ -1,32 +1,13 @@
 #include "list.h"
 
+const unsigned int DEFAULT_LIST_SIZE = 10;
 
-struct ListNode
-{
-    struct ListNode *top;
-    struct ListNode *left;
-    struct ListNode *right;
-    struct ListNode *bottom;
+struct Record {
     void *data;
 };
 
-struct ListHead
-{
-    size_t programCounter;
-    size_t stackPointer;
-    size_t size;
-    struct ListNode *front;
-    struct ListNode *rear;
-};
-
-lhead_t* createList()
-{
-    lhead_t *list = (lhead_t*) malloc(sizeof(lhead_t));
+record_t* createList() {
+    record_t *list = (record_t*) malloc(sizeof(record_t) * DEFAULT_LIST_SIZE);
     assert(list != NULL);
-    list->front = NULL;
-    list->rear = NULL;
-    list->size = LIST_DEFAULT_SIZE;
-    list->programCounter = -1;
-    list -> stackPointer = -1;
     return list;
 }

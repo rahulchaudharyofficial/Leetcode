@@ -87,7 +87,7 @@ char* trim(char *str)
 void cleanup(token_t* toks) {
     if(toks)
     {
-        if(toks && toks->size > 0 && toks->tokens) {
+        if(toks->size > 0 && toks->tokens) {
             for(int i = 0;i < toks->size; i++) {
                 if(*(toks->tokens + i)) {
                     free (*(toks->tokens + i));

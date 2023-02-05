@@ -3,13 +3,11 @@
 #define _LEETCODE_LIST_H_ 1
 
 #include "common.h"
-#include <inttypes.h>
 
-#define LIST_DEFAULT_SIZE 25
-#define LIST_MAX_SIZE __LONG_MAX__ 
+#define LIST_DEFAULT_SIZE 10
 
-typedef struct ListHead lhead_t;
-typedef struct ListNode lnode_t;
+typedef struct Record record_t;
 
-lhead_t* createList();
+
+record_t* createList();
 #endif
