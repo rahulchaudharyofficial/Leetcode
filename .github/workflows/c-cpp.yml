@@ -14,7 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: configure
-      run: echo "Starting build"
+      run: echo "Starting build but first install criterion"
+      run: apt-get install -y libcriterion-dev
     - name: make
       run: make
     - name: make check
