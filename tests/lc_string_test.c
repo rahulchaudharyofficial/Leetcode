@@ -50,3 +50,22 @@ Test(lc_string_test_suite,lc_string_trim_test_with_space_text)
     char *result = trim(text);
     cr_assert(strcmp(result, "rahul")==0);
 }
+
+Test(lc_string_test_suite,lc_string_tokenizer_with_null_text)
+{
+    char *text = NULL;
+    char *del = NULL;
+    token_t *result = tokenizer(text, del);
+    cr_assert(result == NULL);
+    cleanup(result);
+}
+
+Test(lc_string_test_suite,lc_string_tokenizer_with_not_null_text)
+{
+    char text[] = "nothing better than testing old school C code!";
+    char del[] = " ";
+    token_t *result = tokenizer(text, del);
+    cr_assert(result != NULL);
+    //cr_assert(result->tokens != NULL);
+    cleanup(result);
+}
